@@ -1,0 +1,9 @@
+[build]
+
+[target.x86_64-pc-windows-msvc]
+rustflags = [
+    "-C", "target-feature=+sse3", "-C", "control-flow-guard", "-C", "link-args=/DEBUG:NONE"
+]
+
+[profile.release]
+lto = true
