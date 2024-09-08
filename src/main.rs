@@ -5,6 +5,15 @@ use windows::{
 };
 
 fn main() -> windows::core::Result<()> {
+    println!(
+        "{} version {} by {} from {}",
+        &env!("CARGO_PKG_NAME"),
+        &env!("CARGO_PKG_VERSION"),
+        &env!("CARGO_PKG_AUTHORS"),
+        &env!("CARGO_PKG_REPOSITORY")
+    );
+    println!("Rust application to convert Windows 11 Microsoft Support feed to a HTML file");
+
     // get feed
     println!("Fetching feed...");
     let uri = Uri::CreateUri(h!(
