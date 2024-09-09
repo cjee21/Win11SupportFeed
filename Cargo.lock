@@ -4,7 +4,7 @@ version = 3
 
 [[package]]
 name = "Win11SupportFeed"
-version = "2024.9.8"
+version = "2024.9.9"
 dependencies = [
  "embed-resource",
  "windows",
