@@ -10,7 +10,7 @@ Run `Windows11_SupportFeed_to_HTML.exe` and `Windows 11 Support Feed.html` will 
 
 The pre-built binaries can be found at the [releases page](https://github.com/cjee21/Win11SupportFeed/releases).
 
-It is built with the following command:
+They are built and released using [GitHub Actions](https://github.com/cjee21/Win11SupportFeed/actions/workflows/release.yml) with the following command:
 
 ```ps
 cargo build --release
