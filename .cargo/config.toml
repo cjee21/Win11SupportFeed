@@ -7,7 +7,7 @@ rustflags = [
     "-C",
     "control-flow-guard",
     "-C",
-    "link-args=/DEBUG:NONE",
+    "link-args=/CETCOMPAT /DEBUG:NONE",
 ]
 
 [profile.release]
