@@ -17,11 +17,13 @@ jobs:
       contents: write
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: Build
-      run: cargo build --release
-    - name: Release
-      uses: softprops/action-gh-release@v2
-      with:
-        files: target/release/Windows11_SupportFeed_to_HTML.exe
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build
+        run: cargo build --release
+      - name: Test
+        run: cargo run --release
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: target/release/Windows11_SupportFeed_to_HTML.exe

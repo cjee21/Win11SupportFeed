@@ -1,6 +1,6 @@
 use std::fs;
 use windows::{
-    core::*, Foundation::Uri, Globalization::DateTimeFormatting::DateTimeFormatter,
+    core::h, Foundation::Uri, Globalization::DateTimeFormatting::DateTimeFormatter,
     Web::Syndication::SyndicationClient,
 };
 
@@ -24,7 +24,7 @@ fn main() -> windows::core::Result<()> {
         h!("User-Agent"),
         h!("Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)"),
     )?;
-    let feed = client.RetrieveFeedAsync(&uri)?.get()?;
+    let feed = client.RetrieveFeedAsync(&uri)?.join()?;
 
     // create date and time formatters
     let dateformatter = DateTimeFormatter::CreateDateTimeFormatter(h!(

@@ -1,7 +1,7 @@
 [package]
 name = "Win11SupportFeed"
-version = "2024.9.23"
-edition = "2021"
+version = "2025.9.7"
+edition = "2024"
 authors = ["cjee21"]
 repository = "https://github.com/cjee21/Win11SupportFeed"
 
@@ -9,16 +9,12 @@ repository = "https://github.com/cjee21/Win11SupportFeed"
 
 # https://crates.io/crates/windows
 [dependencies.windows]
-version = "0.58.0"
+version = "0.62.0"
 features = [
     "Foundation_Collections",
     "Web_Syndication",
     "Globalization_DateTimeFormatting",
 ]
-
-[build-dependencies]
-# https://crates.io/crates/embed-resource
-embed-resource = "2.4"
 
 [[bin]]
 name = "Windows11_SupportFeed_to_HTML"

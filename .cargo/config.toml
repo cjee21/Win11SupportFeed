@@ -5,9 +5,11 @@ rustflags = [
     "-C",
     "target-cpu=x86-64-v3",
     "-C",
+    "target-feature=+crt-static",
+    "-C",
     "control-flow-guard",
     "-C",
-    "link-args=/CETCOMPAT /DEBUG:NONE",
+    "link-args=/MANIFEST:EMBED /CETCOMPAT /NODEFAULTLIB:libucrt.lib /DEFAULTLIB:ucrt.lib",
 ]
 
 [profile.release]
