@@ -1,6 +1,6 @@
 [package]
 name = "Win11SupportFeed"
-version = "2025.9.7"
+version = "2025.9.10"
 edition = "2024"
 authors = ["cjee21"]
 repository = "https://github.com/cjee21/Win11SupportFeed"
