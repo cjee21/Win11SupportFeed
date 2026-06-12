@@ -17,12 +17,12 @@ jobs:
           - architecture: x86_64
             runner: windows-latest
           - architecture: aarch64
-            runner: windows-11-arm
+            runner: windows-11-vs2026-arm
     name: Build (${{ matrix.architecture }})
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Build
         run: cargo build --release
       - name: Test
@@ -32,7 +32,7 @@ jobs:
           cd target\release
           ren Windows11_SupportFeed_to_HTML.exe Windows11_SupportFeed_to_HTML_${{ matrix.architecture }}.exe
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.architecture }}
           path: target/release/Windows11_SupportFeed_to_HTML_${{ matrix.architecture }}.exe
@@ -44,11 +44,11 @@ jobs:
       contents: write
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v8
         with:
           merge-multiple: true
       - name: Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda # v3.0.0
         with:
           files: |
             Windows11_SupportFeed_to_HTML_aarch64.exe
